@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheCodes</title>
+  </head>
+  <style>
+    body {
+      background-color: white;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0;
+    }
+    h2 {
+      color: blue;
+      text-align: center;
+      font-size: 48px;
+      margin: 0;
+      font-size: 34px;
+      line-height: 48px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h3 {
+      color: black;
+      text-align: center;
+      font-weight: normal;
+      font-size: 34px;
+      margin: 0;
+      line-height: 48px;
+      font-weight: 400px;
+    }
+
+    h4 {
+      color: black;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+    }
+
+    p {
+      color: black;
+      text-align: center;
+      font-family: monospace;
+      font-size: 18px;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+      text-align: center;
+      padding: 10px 0;
+      border-radius: 10px;
+      transition: all 200ms ease-in-out;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    li:hover {
+      background: #fffbef;
+    }
+
+    button {
+      border: 1px solid #1a64d6;
+      border-radius: 30px;
+      box-shadow: 0px 8px 8px rgb(37 39 89 / 8%);
+      text-decoration: none;
+      margin: 20px auto;
+      display: block;
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+      background: #1a64d6;
+      padding: 16px 24px;
+      transition: all 200ms ease ease-in-out;
+    }
+
+    button:hover {
+      background: #fff;
+      color: #1a64d6;
+    }
+  </style>
+  <body>
+    <h1>🌥️</h1>
+    <h2>Currently 21° in Tokyo</h2>
+    <h3>13°/ <strong> 23°</strong></h3>
+    <ul>
+      <li>
+        <h4>🌧️ Tomorrow</h4>
+        <p>10° / 22°</p>
+      </li>
+      <li>
+        <h4>🌤️ Saturday</h4>
+        <p>15° / 17°</p>
+      </li>
+      <li>
+        <h4>☀️ Sunday</h4>
+        <p>25° / 28°</p>
+      </li>
+    </ul>
+    <button>Change City</button>
+    <script>
+      function changeCity() {
+        let city = prompt("Where city do you live in?");
+        let temperature = prompt("What temperature is it?");
+        let h1 = document.querySelector("h1");
+        let h2 = document.querySelector("h2");
+
+        if (temperature >= 0) {
+          h1.innerHTML = "😃";
+          h2.innerHTML = "Currently " + temperature + "°" + " in " + city;
+        } else {
+          h1.innerHTML = "☹️";
+          h2.innerHTML = "Currently " + temperature + "°" + " in " + city;
+        }
+      }
+
+      let changeCityButton = document.querySelector("button");
+
+      changeCityButton.addEventListener("click", changeCity);
+    </script>
+    <p>Coded by Matt Delac</p>
+  </body>
+</html>
